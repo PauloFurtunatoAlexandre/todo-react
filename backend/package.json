@@ -5,10 +5,10 @@
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name todo-react"
+    "production": "pm2 start src/loader.js --name todo"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paulo Alexandre",
   "license": "ISC",
   "devDependencies": {
     "express": "^4.14.0",
