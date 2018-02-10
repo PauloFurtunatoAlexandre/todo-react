@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Studies of React and creation of an app with front and back ends.",
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
