@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+
 import Header from '../template/header'
 import TodoForm from './todoForm'
 import TodoList from './todoList'
 
 const URL = 'http://localhost:3003/api/todos'
+
 export default class Todo extends Component {
     constructor(props) {
         super(props)
@@ -15,6 +17,7 @@ export default class Todo extends Component {
         this.handleMarkAsDone = this.handleMarkAsDone.bind(this)
         this.handleMarkAsPending = this.handleMarkAsPending.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
+        this.handleClear = this.handleClear(this)
         this.refresh()
     }
 
@@ -53,6 +56,10 @@ export default class Todo extends Component {
             .then(resp => this.refresh(this.state.description))
     }
 
+    handleClear() {
+        this.refresh()
+    }
+
     render() {
         return (
             <div>
@@ -61,7 +68,8 @@ export default class Todo extends Component {
                     description={this.state.description}
                     handleChange={this.handleChange}
                     handleAdd={this.handleAdd}
-                    handleSearch={this.handleSearch}/>
+                    handleSearch={this.handleSearch}
+                    handleClear={this.handleClear}/>
                 <TodoList
                     list={this.state.list}
                     handleMarkAsDone={this.handleMarkAsDone}
